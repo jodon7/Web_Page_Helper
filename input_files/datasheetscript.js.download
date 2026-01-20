@@ -1,0 +1,652 @@
+﻿/***** Start Datasheet control script  ***********/
+
+var c = document.getElementById('CurrentCtlIdx')
+if (!c) {
+  c = document.createElement('input');
+  c.setAttribute('id', 'CurrentCtlIdx');
+  c.setAttribute('type', 'text');
+  c.setAttribute('value', '0');
+  c.setAttribute('class', 'hidden');
+}
+
+var textboxEditMode = document.getElementById('TextboxEditMode')
+if (!textboxEditMode) {
+  textboxEditMode = document.createElement('input');
+  textboxEditMode.setAttribute('id', 'TextboxEditMode');
+  textboxEditMode.setAttribute('type', 'text');
+  textboxEditMode.setAttribute('value', '0');
+  textboxEditMode.setAttribute('class', 'hidden');
+  textboxEditMode = 0;
+}
+else {
+  textboxEditMode = textboxEditMode.value;
+}
+
+var dropDownEditMode = document.getElementById('DropDownEditMode')
+if (!dropDownEditMode) {
+  dropDownEditMode = document.createElement('input');
+  dropDownEditMode.setAttribute('id', 'DropDownEditMode');
+  dropDownEditMode.setAttribute('type', 'text');
+  dropDownEditMode.setAttribute('value', '0');
+  dropDownEditMode.setAttribute('class', 'hidden');
+  dropDownEditMode = 0;
+}
+else {
+  dropDownEditMode = dropDownEditMode.value;
+}
+//console.log('Load:' + isOpen() + isTextboxSelected());
+
+
+
+var cfocus = ""
+
+function DataSheetKeyHandler(e) {
+  var evtobj = window.event ? event : e
+  var unicode = evtobj.charCode ? evtobj.charCode : evtobj.keyCode
+
+  if (unicode == 46)
+    DeleteRow();
+
+}
+
+function DeleteRow() {
+  var rows = document.getElementsByTagName("TR");
+
+  for (var idx = 0; idx < rows.length; idx++) {
+    var tr = rows[idx];
+    if (tr.className == "row-selected") {
+      tr.className = "row-hidden"; // todo, add in delete callback functionality, remove client events....
+
+      // disable controls
+      var editControls = new Array("SPAN", "INPUT", "SELECT", "TEXTAREA");
+      var editControls2 = new Array("INPUT");
+
+      var deleteCheckBox = GetFirstChildTagByTypes(tr.cells[0], editControls2);// mark for deletion
+      deleteCheckBox.click();
+
+      for (var cellidx = 2; cellidx < tr.cells.length; cellidx++) {
+        var cell = tr.cells[cellidx];
+
+        var editControl = GetFirstChildTagByTypes(cell, editControls);
+
+        editControl.disabled = true;
+
+        var imgControl = GetChildTag(cell, "IMG");
+        if (imgControl != null)
+          imgControl.style.display = "none"; // disable for calendar controls....
+      }
+
+      var table = GetParentTag(tr, "TABLE");
+      var setToRow = GetNextRow(table, tr.rowIndex);
+
+      SetToCell(table, setToRow, 1);
+
+      return;
+    }
+  }
+
+}
+
+
+function RowSelect(cell) {
+  UnSelectRows(cell);
+
+  var row = GetParentTag(cell, "TR");
+
+  if (row.className != "row-hidden")
+    row.className = "row-selected";
+
+}
+
+function UnSelectRows(cell) {
+  var table = GetParentTag(cell, "TABLE");
+  var rows = table.getElementsByTagName("TR");
+
+  for (var idx = 0; idx < rows.length; idx++) {
+    var tr = rows[idx];
+    if (tr.className == "row-selected")
+      tr.className = "";
+  }
+}
+
+var isOwnerSelected = 0;
+function CellSelect(ctl, highlight) {
+  
+  var cell = GetParentTag(ctl, "TD");
+  //console.log('CellSelect:Start:Highlight: ' + highlight + " | " + isTextboxSelected() + " | " + cell.name + " | " + ctl.name + " | " + ctl.tagName );
+
+  
+  UnSelectRows(cell);
+
+  if (cell == null)
+    return;
+
+  if (highlight) {
+    ctl.className += ' cellselected';
+
+    isOwnerSelected = 0;
+    if (ctl.tagName == 'TEXTAREA' || ctl.tagName == 'INPUT') {
+      textboxEditMode = 1;
+      if (ctl.name.indexOf('$Owners') >= 0) {
+        isOwnerSelected = 1;
+      }
+    } else {
+      textboxEditMode = 0;
+    }
+
+  }
+  else {    
+    ctl.className = ctl.className.replace(/\bcellselected\b/g, "");
+    dropDownEditMode = 0;
+  }
+  //console.log('CellSelect:End:' + isOpen() +" | "+ isTextboxSelected());
+}
+
+function GetParentTag(ctl, type) {
+  if (ctl.tagName == type) {
+    return ctl;
+  }
+  else {
+    if (ctl.parentNode != null) {
+      return GetParentTag(ctl.parentNode, type);
+    }
+  }
+  return null;
+}
+
+
+function IsInArray(ary, search) {
+  for (var idx = 0; idx < ary.length; idx++) {
+    if (ary[idx] == search)
+      return true;
+  }
+
+  return false;
+}
+
+function GetChildTag(ctl, type) {
+  var tags = ctl.getElementsByTagName(type);
+
+  if (tags.length > 0) {
+    return tags[0];
+  }
+}
+
+function GetFirstChildTagByTypes(ctl, types) {
+  // ctl is the a <TD> tag
+  for (var idx = 0; idx < types.length; idx++) {
+    var tags = ctl.getElementsByTagName(types[idx]);
+
+    if (tags.length > 0) {
+      return tags[0];
+    }
+  }
+  return null;
+}
+
+function GetChildTagByTypes(ctl, types, ctlIdx) {
+  // ctl is the a <TD> tag
+  var oldCtlIdx = 0;
+
+  for (var idx = 0; idx < types.length; idx++) {
+    var tags = ctl.getElementsByTagName(types[idx]);
+    var nonHiddenTags = [];
+
+    for (var tagIdx = 0; tagIdx < tags.length ; tagIdx++) {
+      var tag = tags[tagIdx];
+      if (tag.getAttribute("type") != "hidden")
+        nonHiddenTags.push(tag);
+    }
+
+    if (nonHiddenTags.length > 0) {
+
+      if (nonHiddenTags.length > 1) {
+        return nonHiddenTags[ctlIdx];
+      }
+      else if (oldCtlIdx >= ctlIdx) {
+        return nonHiddenTags[0];
+      }
+      else {
+        oldCtlIdx++;
+        continue;
+      }
+    }
+  }
+  return null;
+}
+
+function GetNextControlIdxInCell(ctl, types, currentControlIdx) {
+  // ctl is the a <TD> tag        
+  // handle a special case for any ctls in a cell
+  var ctlsInCellCnt = GetControlsCountInTableCell(ctl);
+
+  if (ctlsInCellCnt > 1) {
+    var lastCtlIdx = ctlsInCellCnt;
+    if (currentControlIdx + 1 <= lastCtlIdx) {
+      var x = GetChildTagByTypes(ctl, types, currentControlIdx + 1);
+      if (x == null || x.name == cfocus) {
+        c.value = 0;
+        return -1;
+      }
+
+      c.value = currentControlIdx + 1;
+      x.focus();
+      return currentControlIdx + 1;
+    }
+    if (currentControlIdx == ctlsInCellCnt - 1) {
+      // this is used when a user clicks in a ctl that is not the last item in the cell and the idx = 1            
+      return GetNextControlIdxInCell(ctl, types, 0);
+    }
+  }
+  c.value = 0;
+  return -1;
+}
+
+function SetFocus(ctrl) {
+  var focus = false;
+  if (ctrl.type != "hidden") {
+    //and it's not disabled
+    if (ctrl.disabled != true) {
+      try {
+        //set the focus to it         
+        ctrl.focus();
+        focus = true;
+      }
+      catch (er) {
+      }
+    }
+  }
+  return focus;
+}
+
+function GetPreviousControlIdxInCell(ctl, types, currentControlIdx) {
+  // ctl is the a <TD> tag        
+  // handle a special case for any ctls in a cell
+  var ctlsInCellCnt = GetControlsCountInTableCell(ctl);
+
+  if (ctlsInCellCnt > 1) {
+
+    if (currentControlIdx - 1 >= 0) {
+      var x = GetChildTagByTypes(ctl, types, currentControlIdx - 1);
+      if (x == null || x.name == cfocus) {
+        c.value = 0;
+        return -1;
+      }
+
+      c.value = currentControlIdx - 1;
+      SetFocus(x);
+      return currentControlIdx - 1;
+    }
+  }
+  c.value = 0;
+  return -1;
+}
+
+function GetControlsCountInTableCell(ctl) {
+  var ctlsInCellCnt = 0;
+  if (ctl.innerHTML) {
+    var arr = ctl.innerHTML.split('<');
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i] != '' && arr[i].substring(0, 1) != '/' && arr[i].substring(0, 6) != 'option' && arr[i].substring(0, 4) != 'SPAN' && arr[i].substring(9, 21) != 'class=hidden')
+        ctlsInCellCnt++;
+    }
+  }
+  return ctlsInCellCnt;
+}
+
+
+function ControlClick(value) {
+  c.value = value;
+}
+
+
+function DropDownClick() {
+  //console.log('DropDownClick:Start:' + isOpen());
+  dropDownEditMode = !dropDownEditMode; //Flip it
+  //console.log('DropDownClick:End:' + isOpen());
+}
+
+function DropDownBlur() {
+  //console.log('Blur:Start:' + isOpen());
+  if (dropDownEditMode) {
+    dropDownEditMode = 0;
+  }
+  //console.log('Blur:End:' + isOpen());
+}
+
+function isOpen() {
+  if (dropDownEditMode)
+    return "menu is open, dropDownEditMode:" + dropDownEditMode;
+  else
+    return "menu is closed, dropDownEditMode:" + dropDownEditMode;
+}
+function isTextboxSelected() {
+  if (textboxEditMode)
+    return "Textbox is Selected, textboxEditMode:" + textboxEditMode;
+  else
+    return "Textbox is Not Selected, textboxEditMode:" + textboxEditMode;
+}
+
+
+function DropDownKeyUp() {
+  var code = window.event.keyCode;
+  //console.log('Keyup:Start:' + isOpen() + " Code:" + code);
+  if (window.event.keyCode == 27) { //Escape
+    if (dropDownEditMode) {
+      dropDownEditMode = !dropDownEditMode; //Flip it
+    }
+  }
+  if (window.event.keyCode == 32) { //Space
+    if (!dropDownEditMode) {
+      dropDownEditMode = !dropDownEditMode;       //Flip it
+    }
+  }
+
+  //console.log('Keyup:End:' + isOpen());
+
+}
+
+//Doesnt look like this is used
+function DropDownDeSelect() {
+  //console.log('DropDownDeSelect:Start:' + isOpen());
+  dropDownEditMode = 0;
+  //console.log('DropDownDeSelect:End:' + isOpen());
+}
+
+
+function AddRow() {
+  var ctl = window.event.srcElement;
+  var cell = GetParentTag(ctl, "TD");
+  var cellIndex = cell.cellIndex;
+  var row = GetParentTag(cell, "TR");
+  var rowIndex = row.rowIndex;
+  var table = GetParentTag(cell, "TABLE");
+  var cellCount = CountCellsInRow(table, row.cells.length);
+  var rowCount = table.rows.length;
+
+  var setToRow = rowIndex;
+  var setToCell = cellIndex;
+
+  var ctlIdx = c.value;
+
+  setToRow = GetNextRow(table, rowIndex);
+
+
+  if (setToRow == -1) {
+    PostBackAddEmptyRows(table);
+  }
+  else {
+    row.cells[0].innerText = rowIndex;
+    table.rows[setToRow].cells[0].innerText = "*";
+  }
+}
+
+// 46 delete, 8 backspace, 13 enter , tab 9
+function Move() {
+  var code = window.event.keyCode;
+
+  // todo, check if in edit mode, or select mode (only applies to left, right keys)
+  // todo, get new row if at last in table
+  var ctl = window.event.srcElement;
+
+  if (!IsCellChangeKey(code)) {
+    //console.log("Move | Code:" + code);
+    return ;
+  }
+  //console.log('Move:Start:' + isOpen() + "|" + isTextboxSelected() + "| Code:" + code);
+
+  //if (textboxEditMode == 1 && code != 13) { //Don't do anything in text boxes except for return
+  //  return;
+  //}
+
+  
+
+  var cell = GetParentTag(ctl, "TD");
+  var cellIndex = cell.cellIndex;
+  var row = GetParentTag(cell, "TR");
+  var rowIndex = row.rowIndex;
+  var table = GetParentTag(cell, "TABLE");
+  var cellCount = CountCellsInRow(table, row.cells.length);
+  var rowCount = table.rows.length;
+
+  var setToRow = rowIndex;
+  var setToCell = cellIndex;
+
+  var ctlIdx = c.value;
+  //alert('Ctl idx before the move ' + ctlIdx + ' -> ' + cfocus + ' ' + cell.id);   
+
+  var ctls = new Array("INPUT", "SELECT", "TEXTAREA");
+
+  // todo, skip row-hidden for deletes
+  // todo, handle home 36 and end 35 keys
+  switch (code) {
+    case 35: // end
+      if (textboxEditMode == 1)
+        return;
+      setToCell = cellCount - 1;
+      break;
+    case 36: // home
+      if (textboxEditMode == 1)
+        return;
+      setToCell = 1;
+      break;
+    case 37: // left
+      if (textboxEditMode == 1)
+        return;
+      // todo , add in check to see if textbox and all selected, or if in edit mode
+
+      //This tries to get and set focus to the previous control in the same cell
+      //if there is nothing it will return -1 
+      ctlIdx = GetPreviousControlIdxInCell(cell, ctls, ctlIdx);
+
+      if (ctlIdx > -1)
+        return;
+
+      if (cellIndex > 1) {
+        //TODO:: SET TO LAST CTL IN cell.
+        setToCell--;
+        // the below is under the assumption we have at most 2 ctls in a cell                    
+        ctlIdx = GetNextControlIdxInCell(table.rows[setToRow].cells[setToCell], ctls, 0);
+        if (ctlIdx != -1)
+          return;
+
+      }
+      else {
+        setToCell = cellCount - 1;
+        setToRow = GetPreviousRow(table, rowIndex);
+      }
+
+      break;
+    case 39: // right
+      if (textboxEditMode == 1)
+        return;
+      //Tests if there are multiple contols in the cell
+      ctlIdx = GetNextControlIdxInCell(cell, ctls, ctlIdx);
+
+      if (ctlIdx != -1) {
+        return;
+      }
+
+      if (cellIndex < cellCount - 1) {
+        setToCell++;
+        // the below is under the assumption we have at most 2 ctls in a cell                    
+        ctlIdx = GetPreviousControlIdxInCell(table.rows[setToRow].cells[setToCell], ctls, 0);
+        if (ctlIdx != -1) {
+          return;
+        }
+      }
+      else {
+        setToCell = 1;
+        setToRow = GetNextRow(table, rowIndex);
+      }
+      break;
+    case 40: // down
+      if (dropDownEditMode == 1 || isOwnerSelected==1)
+        return;
+
+      event.returnValue = false;
+      // todo , add in check to see if textbox and all selected, or if in edit mode                                                
+      ctlIdx = GetNextControlIdxInCell(cell, ctls, ctlIdx);
+      if (ctlIdx != -1)
+        return;
+
+      setToRow = GetNextRow(table, rowIndex);
+      if (setToRow != rowIndex) {
+        ctlIdx = GetPreviousControlIdxInCell(table.rows[setToRow].cells[setToCell], ctls, 0);
+        if (ctlIdx != -1)
+          return;
+      }
+      break;
+    case 38: // up
+      if (dropDownEditMode == 1 || isOwnerSelected==1)
+        return;
+
+      event.returnValue = false;
+      ctlIdx = GetPreviousControlIdxInCell(cell, ctls, ctlIdx);
+      if (ctlIdx > -1)
+        return;
+
+      setToRow = GetPreviousRow(table, rowIndex);
+      if (setToRow != rowIndex) {
+        ctlIdx = GetNextControlIdxInCell(table.rows[setToRow].cells[setToCell], ctls, 0);
+        if (ctlIdx != -1)
+          return;
+      }
+      break;
+
+    case 13: // enter
+      if (dropDownEditMode == 1) {
+        dropDownEditMode = 0;
+        return;
+      }
+      setToRow = GetNextRow(table, rowIndex);
+      break;
+    default:
+      return;
+      //this.style.backgroundColor = "#ffa";
+  }
+
+
+  SetToCell(table, setToRow, setToCell);
+  //console.log('Move:End:' + isOpen() + "|" + isTextboxSelected() + "| Code:" + code);
+}
+
+
+function CountCellsInRow(table, length) {
+  var editControls = new Array("INPUT", "SELECT", "TEXTAREA");
+  var count = 0;
+  for (i = 0 ; i < length; i++) {
+    var editControl = GetFirstChildTagByTypes(table.rows[1].cells[i], editControls);
+    if (editControl && editControl != null && !editControl.disabled) {
+      count++;
+    }
+
+  }
+  return count;
+
+
+}
+
+
+function SetToCell(table, setToRow, setToCell) {
+  var editControls = new Array("INPUT", "SELECT", "TEXTAREA");
+  var editControl = GetFirstChildTagByTypes(table.rows[setToRow].cells[setToCell], editControls);
+  if (editControl && editControl != null) {
+    SetFocus(editControl);
+    //editControl.focus();    
+  }
+}
+
+function GetPreviousRow(table, rowIndex) {
+  rowIndex--;
+
+  if (rowIndex > 0 && table.rows[rowIndex].className != "row-hidden") {
+    return rowIndex;
+  }
+  else if (rowIndex <= 0)
+    return GetNextRow(table, rowIndex);
+  else
+    return GetPreviousRow(table, rowIndex)
+
+}
+
+function GetNextRow(table, rowIndex) {
+  rowIndex++;
+
+  if (rowIndex < table.rows.length && table.rows[rowIndex].className != "row-hidden" && table.rows[rowIndex].className != "new-row-hidden") {
+    return rowIndex;
+  }
+  else if (rowIndex >= table.rows.length || table.rows[rowIndex].className == "new-row-hidden") {
+    var changed = false;
+    // check if changes made to current row ...
+    var tr = table.rows[rowIndex - 1];
+    var isnew = tr.cells[0].isnew;
+
+    if (isnew) {
+      for (var cellidx = 1; cellidx < tr.cells.length; cellidx++) {
+        var editControls = new Array("SPAN", "INPUT", "SELECT", "TEXTAREA");
+        for (var ctlTypeI = 0; ctlTypeI < editControls.length; ctlTypeI++) {
+          var editControl = tr.cells[cellidx].getElementsByTagName(editControls[ctlTypeI]);
+          for (var ctlI = 0; ctlI < editControl.length; ctlI++) {
+            if (editControl[ctlI] != null) {  // alert(editControl[ctlI].innerHTML);
+              // this background color is blank for the owners text box!    
+              //alert(editControl.innerHTML +' ' +editControl.style.backgroundColor + ' class=' + editControl.className)
+
+              if (editControl[ctlI].style.backgroundColor == '#ffa') {
+                changed = true;
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    if (rowIndex >= table.rows.length) {
+      if (changed) {
+        // Set to postback and add empty rows
+        return -1;
+      }
+      else {
+        return GetPreviousRow(table, rowIndex);
+      }
+
+    }
+    else {
+
+      if (changed || !isnew) {
+        table.rows[rowIndex].className = "";
+        return rowIndex;
+      }
+      else {
+        return GetPreviousRow(table, rowIndex);
+      }
+
+    }
+
+  }
+  else
+    return GetNextRow(table, rowIndex)
+
+}
+
+
+function ClearSelection() {
+  var sel;
+  if (document.selection && document.selection.empty) {
+    document.selection.empty();
+  } else if (window.getSelection) {
+    sel = window.getSelection();
+    if (sel && sel.removeAllRanges)
+      sel.removeAllRanges();
+  }
+}
+
+function IsCellChangeKey(keycode) {
+  return (keycode == 35 || keycode == 36 || keycode == 37 || keycode == 38 || keycode == 39 || keycode == 40 || keycode == 13)
+}
+
+function Version1() {
+}
+
+/***** End Datasheet control script  ***********/

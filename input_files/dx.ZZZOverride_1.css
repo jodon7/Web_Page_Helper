@@ -1,0 +1,23 @@
+.dx-datagrid-headers {
+  color: black;
+  font-weight: bold;
+}
+
+
+.dx-datagrid .dx-row > td {
+  font-size: 10px;
+}
+
+
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.dx-editor-cell .dx-texteditor .dx-texteditor-input {
+  font-size: 10px;
+}
+
+.dx-datagrid-export-button .dx-icon-export-excel-button {
+  font: 24px/18px DXIcons;
+}

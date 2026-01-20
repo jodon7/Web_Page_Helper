@@ -1,0 +1,330 @@
+       /**************************************************************/
+        /*  GENERAL LAYOUT */
+        /**************************************************************/
+        body
+        {
+            font-family: verdana, sans-serif;
+            font-size: 10px;
+            padding: 0px;
+            margin: 0px 0px 0px 0px;
+            height:100%;
+        }
+        
+    
+    
+	   /*  Fix for RTE content */    
+       P, UL, OL, A:linkp  
+       {
+	         	margin-top:0px;
+   			margin-bottom:0px;
+       	}
+
+        body a:link, ul.list-basic a:link, ul.list-bullet a:link, ul.list-basic-withspacing a:link, ul.home-list-basic a:link, ul.home-list-basic-large a:link
+        {
+            color: #003572;
+            text-decoration: none;
+            
+        }
+        
+        body a:visited, ul.list-basic a:visited, ul.list-bullet a:visited, ul.list-basic-withspacing a:visited, ul.home-list-basic a:visited, ul.home-list-basic-large a:visited
+        {
+            color: #003572;
+            text-decoration: none;
+            
+        }
+        
+        body a:hover, ul.list-basic a:hover, ul.list-bullet a:hover, ul.list-basic-withspacing a:hover, ul.home-list-basic a:hover, ul.home-list-basic-large a:hover
+        {
+            color: #003572;
+            text-decoration: underline;
+            
+        }
+        
+		a.non-link:hover
+		{
+			   text-decoration: none;
+		}
+
+        body a:active, ul.list-basic a:active, ul.list-bullet a:active, ul.list-basic-withspacing a:active, ul.home-list-basic a:active, ul.home-list-basic-large a:active
+        {
+            color: #003572;
+            text-decoration: underline;
+            
+        }
+        
+        .RequiredField
+        {
+                 color:Red;
+        }
+        
+        .important
+        {
+             font-weight:bold;
+             color:Red;
+        }
+        .Error
+        {
+             font-weight:bold;
+             color:Red;
+        }
+        .Text14px{
+          font-size:14px;
+        }
+        .Text12px{
+          font-size:12px;
+        }
+        
+        .table-full
+        {
+            height:100%;
+            width:100%;
+        }
+         #container
+        {
+            margin: 0px auto;
+            padding: 0px;
+            width: 100%; /* width of the layout -- can be set to any value including percentages */
+            overflow: hidden;
+            
+        }
+     
+        #header
+        {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            
+        }
+        #navigation
+        {
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+        }
+     
+         #sidebar-left
+        {
+        	vertical-align:top;
+            width:130px;/* witdh of the left sidebar -- can be set to any value including percentages */
+            height:400px;
+            text-align: center;
+        }
+        #sidebar-left-border
+        {
+        	vertical-align:top;
+            width:15px;
+        }   
+        #content
+        {
+        	vertical-align:top;
+            border-left: solid 1px #e6e5e6;
+        }
+		#sidebar-right
+        {
+        	vertical-align:top;
+        	width: 201px; /* width of the right sidebar -- can be set to any value including percentages */
+            background:url("images/content-border-bg.jpg") repeat-x top;
+        }
+        
+        
+      
+		.border-cap
+		{
+			background-image:url(images/edge.jpg);	
+			background-repeat:repeat-x;
+		}
+
+        .hidden
+        {
+            visibility:hidden;
+            width:0px;
+            height:0px;
+        }
+        
+        #footer
+        {
+            clear: both;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        ul.list
+        {
+			color:#CC0000;
+			padding:0px;
+			margin-top:2px;
+			margin-bottom:2px;
+        }
+            
+       ul.list a:active
+       {
+       	color:#CC0000;
+       }
+       ul.list a:visited
+       {
+       	color:#CC0000;
+       	}
+       ul.list a:hover
+       {
+       	color:#CC0000;
+       	}
+       ul.list a:link
+       {
+       	color:#CC0000;
+       	}
+        
+        body a:hover, ul.list-basic a:hover, ul.list-bullet a:hover, ul.list-basic-withspacing a:hover, ul.home-list-basic a:hover, ul.home-list-basic-large a:hover
+        {
+            color: #003572;
+            text-decoration: underline;
+            
+        }
+        
+        body a:active, ul.list-basic a:active, ul.list-bullet a:active, ul.list-basic-withspacing a:active, ul.home-list-basic a:active, ul.home-list-basic-large a:active
+        {
+            color: #003572;
+            text-decoration: underline;
+            
+        }
+        
+        .crumb
+        {
+        	float:left;
+			padding-bottom:1px;
+			
+        }
+        
+        .member-panel
+        {
+        	
+        	color: #003572;
+        	margin-right:5px;
+			font-style:italic;        	 
+        }
+        
+        .popupPanel span
+        {
+        	background-color:#fff7ce;
+        }
+        
+        /**************************************************************/
+        /*  BANNER */
+        /**************************************************************/
+        .hdr-outer
+        {
+            background-color: #0860a8;
+            border-bottom: solid 2px #e6e5e6;
+            overflow : hidden;
+        }
+        .unadorned-link img, .unadorned-link:hover, .unadorned-link:link, .unadorned-link:visited
+        {
+            border: none;
+            text-decoration: none;
+            border-width: 0px;
+        }
+        .hdr-img
+        {
+            float: left;
+        }
+        .hdr-nav
+        {
+            float: right;
+            margin-top:8px; 
+        }
+        .endfloat
+        {
+            clear: both;
+            font-size: 1px;
+        }
+        .hdr-mnu-lbl-itm
+        {
+            font-size: 14px;
+            font-weight: bold;
+            color: #D6EFFF;
+            padding: 12px 12px 10px 10px;
+            cursor: pointer;
+            
+        }
+        .hdr-mnu-lbl-itm:hover
+        {
+            text-decoration: underline;
+        }
+        .dyn-mnu
+        {
+            border: solid 1px gray;
+            z-index: 100000;
+        }
+        .hdr-mnu-lbl-itm a:link, ul.list-basic a:link, ul.list-bullet a:link, ul.list-basic-withspacing a:link, ul.home-list-basic a:link, ul.home-list-basic-large a:link
+        {
+            color: #D6EFFF;
+            text-decoration: none;
+            
+        }
+        .hdr-mnu-lbl-itm a:visited, ul.list-basic a:visited, ul.list-bullet a:visited, ul.list-basic-withspacing a:visited, ul.home-list-basic a:visited, ul.home-list-basic-large a:visited
+        {
+            color: #D6EFFF;
+            text-decoration: none;
+            
+        }
+        .hdr-mnu-lbl-itm a:hover, ul.list-basic a:hover, ul.list-bullet a:hover, ul.list-basic-withspacing a:hover, ul.home-list-basic a:hover, ul.home-list-basic-large a:hover
+        {
+            color: #D6EFFF;
+            text-decoration: underline;
+            
+        }
+        .hdr-mnu-lbl-itm a:active, ul.list-basic a:active, ul.list-bullet a:active, ul.list-basic-withspacing a:active, ul.home-list-basic a:active, ul.home-list-basic-large a:active
+        {
+            color: #D6EFFF;
+            text-decoration: underline;
+            
+        }
+        .hdr-mnu-itm
+        {
+            background-color: #e6e5e6;
+            padding: 1px 3px 1px 3px;
+        }
+        .hdr-mnu-item-hvr
+        {
+            background-color: whitesmoke;
+        }
+ 
+ 
+/**************************************************************/
+/* Menus */
+/**************************************************************/
+
+/* drop down  */
+
+.ContextMenuPanel-Drop
+{
+	background:url(images/down.gif) no-repeat right;
+	padding:2px 2px 2px 2px;
+}
+
+.ContextMenuPanel 
+{
+    visibility:hidden;
+     position:absolute; /*  IE6 display fix */
+ 	z-index: 2000;
+    border:solid 1px lightgrey;
+    padding: 3px 3px 3px 3px;
+    background-color:#FAFAFA;
+}
+
+.ContextMenu
+{
+	vertical-align:middle;	
+	z-index: 2000;
+}
+
+.searchAndCrumb
+{
+background-color:#BDD7E7;
+font-size:x-small;
+font-weight:bold;
+	}
+
+
+a[disabled=disabled] div span{ color: rgba(160, 160, 160, 1);} /* Makes the Disabled Icon gray in chrome  */

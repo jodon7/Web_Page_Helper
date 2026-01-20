@@ -1,0 +1,38 @@
+﻿function AddNewItem(metadataGroupDropDown, metadataGroupTextBox)
+{
+    var group = document.getElementById(metadataGroupTextBox); 
+    var metadataGroupDropDownControl = document.getElementById(metadataGroupDropDown);             
+    if(group && metadataGroupDropDownControl) 
+    {
+        if (metadataGroupDropDownControl.selectedIndex==1) 
+        {
+            group.style.display='inline';
+            group.value = '';
+            group.focus();
+            group.select();
+        } 
+        else 
+        {
+            group.value = '<Enter New Group Name Here>';
+            group.style.display='none';
+        }
+    }
+}
+
+function HideControl(controlID)
+{
+    var control = document.getElementById(controlID); 
+    if(control) 
+    {
+        control.style.display='none';        
+    }
+}
+
+function ShowControl(controlID)
+{
+    var control = document.getElementById(controlID); 
+    if(control) 
+    {
+        control.style.display='inline';        
+    }
+}

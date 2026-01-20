@@ -1,0 +1,2054 @@
+/*When Updating this file you need to change the file name to increment the version so its not cached.*/ 
+
+/* Dropdown Checkbox list styles  */
+.dd-box
+{
+    float: left;
+    height: 20px;
+    border-top: solid 1px #7f9db9;
+    border-left: solid 1px #7f9db9;
+    border-bottom: solid 1px #7f9db9;
+    cursor: pointer;
+    overflow: hidden;
+    TEXT-OVERFLOW: ellipsis;
+    WHITE-SPACE: nowrap; 
+}
+.dd-pu
+{
+    border: solid 1px #7f9db9;
+    
+    visibility: hidden;
+    background-color: white;
+    overflow-y:scroll;
+}
+
+.dd-pu td
+{
+	border-bottom: solid 1px lightgrey;
+	background-color: whitesmoke;
+	
+}
+
+.dd-img
+{
+    float: left;
+    border: solid 1px #7f9db9;
+    background-color: #CAE2FD;
+    border: solid 1px 7f9db9;
+    height: 18px;
+    width: 16px;
+    padding-top: 2px;
+    padding-left: 2px;
+    cursor: pointer;
+}
+/* Dropdown Checkbox list styles  - END */
+
+
+
+.dws-cbl-tbl
+{
+	margin-left:20px
+}
+
+.dws-cbl-tbl td
+{
+	vertical-align:top;
+}
+
+.dws-cbl-s 
+{
+	background:  url(images/checkbox.png) no-repeat left;
+	padding-left:18px;
+	font-weight:bold;
+}
+
+.dws-cbl
+{
+	background:  url(images/checkbox_empty.png) no-repeat left;
+	padding-left:18px;
+}
+
+
+.TaskGridItemStyle
+{
+    background-color:Red;
+    overflow:scroll;
+    width:55%;        
+}
+
+.de-hdr
+{
+	background-color:whitesmoke;
+	border: solid 1px lightgrey;
+
+}
+
+
+.cell-hidden
+{
+	display:none;
+	width:0px;
+}
+
+.search-result-table
+{
+	 border-color:LightGrey; 
+	 border-width:1px; 
+	 border-style:Solid; 	 
+	 overflow:scroll;
+	 border-collapse:collapse;
+	 text-align:left;
+	 table-layout:fixed;
+	 padding:20px;	 	 
+}
+.search-result-table TD
+{
+	vertical-align:top;	
+}
+
+.link-bullet
+{
+	padding-left:20px;
+}
+.link-bullet img
+{
+	padding-right:5px;
+}
+
+.pp-chk-fld
+{
+	
+}
+
+
+
+.row-restricted, .row-restricted a:link,  .row-restricted a:hover,  .row-restricted a:visited 
+{
+	color:Red;
+}
+
+.WizardTitle
+{
+	font-size:12px;
+}
+
+.WizardSubTitle
+{
+
+}
+
+.md-grp-visible
+{
+	
+	font-size:14pt; font-weight:bold;cursor:pointer; padding-left:20px;
+	border: solid 1px gray;
+	background-color:whitesmoke;
+	margin-bottom:4px;
+}
+
+.md-grp-hidden
+{
+	font-size:14pt; font-weight:bold;cursor:pointer; padding-left:20px;
+	border: solid 1px gray;
+	background-color:whitesmoke;
+	margin-bottom:4px;
+}
+
+/* Popout menu*/
+.dws-status
+{
+ 
+ 	
+}
+.dws-mnu-lnk-hvr
+{
+    
+}
+.dws-mnu-lnk-item
+{
+    font-family: verdana;
+	 white-space:normal;     
+	 word-wrap:break-word;
+	 overflow:visible;
+	 width:100%;
+	 word-break:break-all;
+	 vertical-align:middle;
+}
+
+
+.dws-mnu-lnk-item img
+{
+    padding-left:5px;
+    padding-right:5px;
+}
+.dws-mnu
+{
+    padding: 5px 5px 5px 5px;
+    border: solid 2px gray;
+}
+
+
+.dws-mnu-itm
+{
+	 
+    width:140px;
+    padding: 5px 5px 5px 5px;
+    font-family: verdana;
+
+}
+
+
+table.dws-mnu-itm
+{
+	width:100%;
+}
+
+.dws-mnu-itm-hvr
+{
+    font-weight:bold;
+    text-decoration:underline;
+}	
+
+.branch-node
+{
+	  padding-left:14px;
+	  padding-top:1px;
+	  margin-left:4px;
+	  background: url(images/hlp_leaf2.gif) no-repeat left top;
+	  
+}
+
+.current-node
+{
+	padding-left:12px;
+	padding-top:1px;
+	padding-bottom:3px;
+	margin-left:4px;
+	background:  url(images/usm.GIF) no-repeat left top;
+}
+
+
+/********************************************************/
+/* Configuration */
+/********************************************************/
+.config-hdr
+{
+	padding: 0px 0px 4px 12px;
+	vertical-align:middle;
+}
+
+.config-cell
+{
+	vertical-align:top;
+	text-align:left;
+}
+
+.config-cell-header
+{
+	font-weight:bold;
+	background: url(images/panel-hdr.png) repeat-x; 
+	border: solid 1px #0860a8;
+	padding: 2px 0px 2px 5px;
+
+}
+
+.config-items
+{
+    margin:0px;
+    padding-left:10px;
+	padding-top:3px;
+	list-style-type:none;
+}
+
+
+
+       /**************************************************************/
+        /*  NAVIGATION */
+        /**************************************************************/
+        .icon-menu
+        {
+            padding-top: 10px;
+            margin: 0px;
+            text-align: center;
+        }
+        .icon-menu img
+        {
+        }
+        .icon-menu a
+        {
+            font-weight: bold;
+            font-style: normal;
+            padding-bottom: 15px;
+        }
+        
+        /**************************************************************/
+        /* footer user control */
+        /**************************************************************/
+        #footer-intel {padding:10px 0px 0px 18px; background:url("images/ftr-start-footer.gif") repeat-x top; font-size:64%; font-family:verdana, sans-serif; }
+        .footer-leftbar
+        {
+            float: left;
+            width: 360px;
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            color: #0860a8;
+        }
+        .footer-rightbar
+        {
+            float: right;
+            width: 375px;
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            color: #000000;
+        }
+        .footer-leftbar li a, .footer-rightbar li a
+        {
+            color: #0860a8;
+            text-decoration: none;
+        }
+        .footer-leftbar li a:hover, .footer-rightbar li a:hover
+        {
+            color: #0860a8;
+            text-decoration: underline;
+        }
+        .footer-leftbar-firstitem
+        {
+            float: left;
+            padding: 0px 9px 0px 0px;
+        }
+        .footer-leftbar-item
+        {
+            float: left;
+            background: url(images/ftr-spacer-bar.gif) no-repeat left;
+            padding: 0px 9px 0px 9px;
+        }
+        .footer-rightbar-firstitem
+        {
+            float: left;
+            padding: 0px 12px 0px 9px;
+        }
+        .footer-rightbar-item
+        {
+            float: left;
+            background: url(images/ftr-spacer-bar.gif) no-repeat left;
+            padding: 0px 9px 0px 9px;
+        }
+        .footer-rightbar-lastitem
+        {
+            float: left;
+            background: url(images/ftr-spacer-bar.gif) no-repeat left;
+            padding: 0px 0px 0px 9px;
+        }
+        .footer-link-character
+        {
+            color: #0860a8;
+        }
+        /**************************************************************/
+        /* Information Panel Content Area   */
+        /**************************************************************/
+        .InformationConsoleHeaderTop
+        {
+            font-weight: bold;
+            margin: 0px 0px 0px 3px;
+            padding-left: 8px;
+            padding-top: 4px;
+            background-image: url(images/lhn-subheading-bg.gif);
+            background-repeat: repeat-x;
+            height: 21px;
+            width:220px;
+        }
+        .InformationConsoleHeader
+        {
+            font-weight: bold;
+            margin: 4px 0px 0px 3px;
+            padding-left: 8px;
+            padding-top: 5px;
+            background-image: url(images/lhn-subheading-bg.gif);
+            background-repeat: repeat-x;
+            height: 21px;
+            border-top: solid 1px #e7e7e7;
+            width:220px;
+            
+        }
+
+        .InformationConsoleContent
+        {
+            margin: 0px 3px 0px 3px;
+            border: solid 1px #e7e7e7;
+            padding-bottom:3px;
+        }
+
+        .InformationConsoleContent-White
+        {
+            margin: 0px 3px 0px 3px;
+            background-color:White;
+            border: solid 1px #e7e7e7;
+            padding-bottom:3px;
+            width: 226px;
+        }
+        
+        .sub-section-title
+        {
+            margin: 0px;
+            padding: 3px 0px 3px 4px;
+            text-decoration:underline;
+            color: #000000;
+            background-color:#F1FAFE;
+            
+        }
+        
+        .sub-section-CCBtitle
+        {
+            margin: 0px;
+            padding: 3px 0px 3px 4px;
+            font-weight: bold;
+            font-size:12px;
+            color: #000000;
+        }
+        
+        .sub-section-pad
+        {
+        	font-size:10px;
+        }
+        
+        .sub-section-content
+        {
+            margin: 0px;
+            color: #666666;
+        }
+        .sub-section-content-link
+        {
+            margin: 0px;
+            padding: 3px 0px 3px 4px;
+            color: #666666;
+            overflow: hidden;
+            width:186px;
+        }
+        .sub-section-rule
+        {
+            border-bottom: solid 1px #E9E9E9;
+            padding: 1px 0px 1px 4px;
+            color: #666666;
+        }
+        
+ /******************* UL list in info panel */
+.members-list
+{
+ margin: 0px 0px 0px 5px;   
+}
+        
+        /**************************************/
+        
+        
+        
+        
+
+
+/******************* Tree View */
+.treeview table
+{
+	height: auto;
+	width:auto;
+	min-height:0%;
+}
+
+
+/******************* Workflow */
+.rg-hdr
+{
+	font-family: verdana;
+	font-size:large;
+	font-weight:bold;
+		
+}
+
+.wf-insert
+{
+	font-family: verdana;
+}
+
+.wf-add-act
+{
+	background-color:lightyellow;
+	border:solid 1px brown;
+	margin-top:2px;
+	margin-bottom:2px;	
+	margin-left:2px;	
+	vertical-align:middle;
+	cursor:pointer;
+	height:100%;
+	
+}
+
+.wf-add-act:hover
+{
+	background-color:brown;
+	color:lightyellow;
+	border:solid 1px lightyellow;
+}
+
+.wf-add-act img
+{
+	padding-left:4px;
+	padding-right:4px;
+}
+.wf-add-act span
+{
+	 
+	  vertical-align:middle;
+	  cursor:pointer;
+	  
+}
+
+.wf-gating
+{
+	color:Red;
+	border: solid 1px lightgrey;
+	text-align:center;
+	font-weight:bold;
+}
+
+.wf-add-ind
+{
+	color:#0860a8;
+	padding-top:4px;
+	
+}
+
+.wf-key-pnl
+{
+	border-bottom: solid 1px whitesmoke;
+	padding: 3px 3px 3px 3px;
+	margin-left:5px;
+	color:#003572;
+	vertical-align: middle;
+	
+}
+
+.wf-key-pnl img
+{
+ vertical-align:middle;
+ padding-right:10px;	
+}
+
+.wf-roles
+{
+	padding-left:4px;
+}
+
+.wf-add-ind a
+{
+	margin-left:4px;
+}
+
+.wf-step
+{
+	font-family: verdana;
+	padding-left:15px;	
+	
+}
+
+.wf-act
+{
+	border-bottom: solid 1px lightgrey;
+	border-left: solid 1px LightGrey;
+	border-right: solid 1px LightGrey;
+	clear:both;
+}
+
+
+.wf-step a
+{
+	cursor:pointer;
+}
+
+.wf-act a:hover
+{
+	text-decoration:underline;	
+}
+
+a:hover
+{
+	text-decoration:underline;	
+}
+
+.wf-step img
+{
+	
+}
+
+.wf-flow-action
+{
+	color:red;
+	width:100%;
+	text-align:center;
+	border: solid 1px LightGrey;
+	font-weight:bold;
+	padding-top:4px;
+	padding-bottom:4px;
+}
+
+.wf-editor-cont
+{
+  border-left:solid 1px LightGrey;
+ border-right:solid 1px LightGrey;
+ border-bottom:solid 1px LightGrey;
+ width:100%;
+}
+
+.wf-editor-single
+{
+
+}
+
+.wf-activity-submit
+{
+    text-align: right;
+	vertical-align:bottom;
+	width:30px;
+	cursor:pointer;
+	border:solid 1px brown;
+	background-position:right;
+	background:lightyellow URL(images/icons/24x24/nav_right_green.png) no-repeat center;
+}
+
+.wf-activity-submit:hover
+{
+	background-color:brown;
+	border:solid 1px lightyellow;
+	color:Yellow;
+}
+
+.wf-activity-submit span
+{
+	text-align:center;
+	font-weight:bold;
+}
+
+
+
+/****************** Check in / out control */
+.document-change-control-hdr
+{
+	
+}
+
+.document-change-control-links
+{
+	padding-top:3px;
+}
+
+.document-change-control-links li
+{
+	float:left; 
+	margin-left:10px;
+	vertical-align:middle;
+}
+
+.document-change-control-links  A:link,  .document-change-control-links a:visited,  .document-change-control-links a:hover
+{
+	background:URL(images/rect.gif) no-repeat;
+	background-position:left center;
+	cursor:pointer;
+	color:#0860a8;
+	text-decoration:none;
+	padding-left:10px;
+	padding-bottom:1px;
+	vertical-align:middle;
+}
+
+.document-change-control-links a:hover
+{
+	text-decoration:underline;	
+}
+
+
+.document-change-control-icons
+{
+	padding-top:3px;
+}
+
+.document-change-control-icons li
+{
+	list-style-image:none;
+	list-style-type:none;
+}
+
+
+/******************* Workspace Action Summary */
+.action-panel
+{
+	width:100%;
+}
+
+
+.action-panel tr.r0 td
+{
+	background-color:#FBFBFB;
+	border:solid 1px gray;
+}
+
+.action-panel tr.r1 td
+{
+	border-bottom:solid 1px lightgrey;
+}
+
+.action-panel tr.r2 td
+{
+	background-color:#FBFBFB;
+	border-bottom:solid 1px lightgrey;
+}
+
+.action-panel tr.r1 td.c1
+{
+	border-bottom:none;
+	border-bottom:solid 1px lightgrey;
+	
+	
+}
+
+.action-panel tr.r2 td.c1
+{
+	background-color:White;
+	border-bottom:none;
+	border-bottom:solid 1px lightgrey;
+	
+}
+
+.action-panel tr.r1 td.c2
+{
+	border-bottom:none;
+}
+
+.action-panel tr.r2 td.c2
+{
+	border-bottom:none;
+}
+
+/******************* Workflow */
+.edit-workflow-menu
+{
+	
+}
+
+/******************* Tree view */
+
+.tree-view table
+{
+	width:auto;
+}
+
+/******************* Events */
+
+.ajax__tab_tab
+{
+	/* override for tab headers */
+	font-weight:bold;
+
+
+}
+
+.event-header
+{
+	padding-top:5px;
+	font-weight:bold;
+	border-bottom:solid 1px lightgrey;
+	width:100%;
+}
+
+
+.evt-t
+{
+	color:mediumgrey;
+	font-style:italic;
+	
+	width:140px;
+	margin-left:8px;	
+	padding-top:3px;
+	padding-bottom:3px;
+}
+.evt-i
+{
+	width:22px;
+	padding-top:3px;
+	padding-bottom:3px;
+	border-bottom:solid 1px lightgrey;	
+}
+.evt-i img
+{
+	padding-top:3px;
+}
+.evt-d
+{
+	color:Black;
+	border-bottom:solid 1px lightgrey;	
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-right:3px;
+}
+
+/*******************  Spread sheet grid */
+table.datasheet {
+	
+}
+
+.datasheet th {
+	text-align:left;
+	
+}
+.datasheet tr {
+	vertical-align:middle;
+}
+.datasheet td {
+	vertical-align:top;	
+}
+
+.datasheet td input[type="textbox"] , .datasheet td textarea, .datasheet td input
+{
+	border:0px none;
+	width:100%;
+	vertical-align:top;	
+	font-family:verdana, sans-serif;
+	padding-top:1px;
+}
+.datasheet td span {
+	border:0px none;
+	width:100%;
+	vertical-align:top;	
+}
+
+.datasheet td input[type="checkbox"]
+{
+	text-align:left;
+	width:20px;
+}
+
+.cellselected {
+  background-color:#D5EAFF !important; 	
+}
+
+td.dataSheetCell
+{
+	
+	
+}
+td.dataSheetCell input:focus-within 
+{
+	background-color:#D5EAFF;	
+}
+
+td.dataSheetCell span:focus-within 
+{
+	background-color:#D5EAFF;	
+}
+
+td.dataSheetCell select:focus
+{
+	background-color:#D5EAFF;	
+}
+td.dataSheetCell input:focus
+{
+	background-color:#D5EAFF;	
+}
+
+td.dataSheetCell span:focus
+{
+	background-color:#D5EAFF;	
+}
+
+td.dataSheetCell select:focus
+{
+	background-color:#D5EAFF;	
+}
+
+td.dataSheetCell textarea:focus-within
+{
+	background-color:#D5EAFF;	
+}
+.dataSheetCell:focus,.dataSheetCell:active 
+{
+	background-color:#D5EAFF;	
+}
+
+.datasheet th {
+	padding-top:3px;
+	padding-bottom:3px;
+	background-color:#ddd;
+	border-top:1px solid #eef;
+	border-left:1px solid #eef;
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	color:#003;
+	font-size:.9em;
+	font-weight:bold;
+text-align:center;
+
+}
+.datasheet tbody th {
+	text-align:center;
+	color:#222;
+}
+
+
+.form_groove_outer {
+	padding:0px;
+	margin:0px;
+	border-top:1px solid #669;
+	border-bottom:1px solid #fff;
+	border-right:1px solid #fff;
+}
+.form_groove_inner {
+	padding:0px;
+	margin:0px;
+	border-left:1px solid #669;
+}
+.datasheet .ds-hdr
+{
+	background-color:#ddd;
+	border-top:1px solid #eef;
+	border-left:1px solid #eef;
+	border-right:1px solid #999;
+	border-bottom:1px solid #999;
+	color:#003;
+	font-weight:bold;
+	text-align:center;
+	width:20px;
+	font-family:verdana, sans-serif;
+	vertical-align:middle;
+}
+.row-selected, .row-selected TD, .row-selected INPUT, .row-selected SELECT
+{
+		background-color:#8CB3B3;
+}
+
+.row-hidden, .row-hidden TD, .row-hidden INPUT, .row-hidden SELECT
+{
+	text-decoration:line-through;
+	 font-style:italic;
+}
+
+.new-row-hidden
+{
+	display:none;
+}
+
+/******************* Announcements */
+
+
+.AnnouncementDetailLabel
+{    
+    font-weight:bold;
+    float:left;
+    padding-right:39px; 
+}
+
+.AnnouncementDetailInput
+{
+    text-align:left;    
+    padding-top: 5px;
+    width:100%;
+    /** padding-left:100px;  **/
+}
+
+.announcement-data-list
+{
+	width:100%;
+}
+
+.announcement-title
+{
+ background-color:white;
+ color:darkgrey;
+ font-weight:bold;	
+ padding-left:10px;
+ padding-bottom:4px;
+ 
+}
+.announcement-detail
+{
+ background-color:white;
+ font-weight:normal;
+ padding-bottom:5px;
+ padding-left:20px;	
+ color:Black;	
+}
+.announcement-date
+{
+    padding-left :8px;
+    background-color:white;
+    font-weight:normal;
+    font-style:italic;
+}
+
+.AnnouncementBodyText
+{
+    color:Black;
+    
+}
+
+.AnnouncementBody
+{
+    top: 0px;    
+}
+.collapsePanel 
+{
+	width:100%;
+    height:0px;
+    background-color:white;
+}
+ 
+.collapsePanelHeader{   
+    width:99%;
+    color: black;
+    background:url(images/lhn-subheading-bg.gif) repeat-x;
+    border:solid 1px darkgray;
+    font-weight:bold;
+    float:none;
+    padding:2px; 
+    cursor: pointer; 
+    vertical-align: middle;
+}
+
+/******************* Event Calendar */
+.event-calendar
+{
+	width:100%;
+	
+}
+.event-calendar-day
+{
+	vertical-align:top;
+	border:solid 1px lightgrey;
+	height:60px;
+	width:60px;
+	}
+.event-calendar-item
+{
+		background-color:whitesmoke;
+		border:solid 1px lightgrey;
+		font-weight:bold;
+		width:100%;
+}	
+	
+.event-calendar-cell-today
+{
+	background-color:lightyellow;
+	vertical-align:top;
+	border:solid 1px lightgrey;	
+	width:60px;
+}
+	
+
+.event-calendar-complete
+{
+	
+}
+.event-calendar-overdue
+{
+}
+.event-calendar-upcoming
+{
+}
+.AgendaSort
+{
+	
+	font-family:verdana, sans-serif;
+	font-size:12px;
+	width:220px;
+	vertical-align: middle;
+
+}
+
+/******************* Control Frame */
+.ControlFrameTitle
+{
+	background-color:whitesmoke;
+	color:#003572;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+    padding:0px;
+    margin:0px;
+	border: solid 1px LightGrey;
+	height:14px;
+	overflow : hidden;
+
+}
+
+.ControlFrameTitle2
+{
+	background-color:whitesmoke;
+	color:#003572;
+	font-family:verdana, sans-serif;
+    padding:0px;
+    margin:0px;
+	border: solid 1px LightGrey;
+	height:29px;
+	display:block;
+	font-weight:bold;
+	vertical-align:middle;
+}
+
+.ControlFrameTitle2 div a
+{
+	font-weight:bold;
+}
+
+.ControlFrameTitle2 div span
+{
+	font-weight:bold;
+}
+
+
+.ControlFrameTitle2 span
+{
+	font-weight:normal;
+	font-style:italic;
+	padding-top:4px;
+}
+
+
+.ControlFrameTitle2 img
+{
+    float:left;
+    vertical-align:middle;
+    padding-left:3px;
+    padding-right:3px;
+
+}
+
+
+.ControlFramePanel
+{
+	border: solid 1px LightGrey;
+	background-color:white;
+	font-family:verdana, sans-serif;
+    padding:0px;
+    margin:0px;	
+	vertical-align:top;
+	
+	
+}
+
+.ControlFramePanel-noborder, .ControlFramePanel-noborder td, .ControlFramePanel-noborder a, .ControlFramePanel-noborder span
+{
+    padding:0px;
+    margin:0px;
+	font-family:verdana, sans-serif;
+	
+	
+	
+}
+.ControlFrameTitle a, .ControlFrameTitle img
+{
+    float:right;
+}
+
+ .ControlFramePanel-noborder table
+ {
+     
+ }
+
+
+.dws-control-frame
+{
+	background-color:whitesmoke;
+	color:#003572;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+	width:99%;
+	display:table;
+}
+.dws-control-frame div
+{
+	float:left;
+}
+
+.dws-control-frame img
+{
+	float:right;
+}
+
+.dws-control-frame-information
+{
+	background-color:whitesmoke;
+	color:#FF6600;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+  font-size:13px;
+  
+	width:99%;	
+}
+
+.dws-control-frame-migration
+{
+	background-color:whitesmoke;
+	color:red;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+  font-size:25px;
+  
+	width:99%;	
+}
+
+
+.dws-control-frame-yellow
+{
+	background-color:whitesmoke;
+	color:#FF6600;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+	width:99%;	
+}
+
+.dws-control-frame-red
+{
+	background-color:whitesmoke;
+	color:#CC0000;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+	width:99%;	
+}
+.dws-control-frame-red div
+{
+	float:left;
+}
+
+.dws-control-frame-red img
+{
+	float:right;
+}
+
+
+.dws-document-properties
+{
+	width:100%;
+}
+
+/******************* Workflow Panel */
+
+.WorkflowPanelFrameTitle
+{
+	background-color:#FBFBFB;
+	/*background-color:whitesmoke;*/
+	color:#0860a8;
+	font-weight:bold;
+	font-family:verdana, sans-serif;
+	border: solid 1px LightGrey;
+	width: 100%;
+}
+
+.WorkflowPanelFrameTitle a
+{
+	float:right;
+}
+
+.WorkflowPanelFramePanel
+{
+	border: solid 1px LightGrey;	
+	display:table;
+	vertical-align:top;
+	width: 100%;
+}
+.WorkflowPanelFramePanel-noborder
+{
+	border: solid 1px white;	
+	width: 100%;
+}
+
+/******************* Information Panel */
+.information-panel-label
+{
+	width:100%;
+}
+
+
+.information-panel-label a:hover
+{
+	text-decoration:underline;
+}
+
+/******************* Rick Text Control */
+.RichText UL
+{
+	display: block; 
+	margin: 1.12em 0;
+	margin-left: 40px ;
+	margin-top: 0; margin-bottom: 0 
+	}
+.RichText OL
+{
+	display: block; 
+	list-style-type: decimal;
+	margin: 1.12em 0;
+	margin-left: 40px ;
+	margin-top: 0; margin-bottom: 0 ;
+}
+.RichText LI{ display: list-item; }
+
+
+/**************************************************************/
+/* Edit Fields */
+/**************************************************************/
+.EditFieldContainer
+{
+	padding:0px 0px 4px 0px;
+	margin:0px;
+	width:99%;
+	
+}
+
+.EditFieldContainer TD
+{
+	vertical-align:top;
+	margin-top:2px;
+}
+
+
+.EditFieldTitleBold
+{
+	vertical-align:top;
+	font-weight: bold; 
+	color: #000000;
+	width:100%;
+	
+}
+
+EditFieldTitle
+{
+	vertical-align:top;	
+	color: #000000;
+	width:100%;
+	
+}
+
+.EditFieldDescription
+{
+	font-style:italic;
+	vertical-align:top;
+	color:Gray;
+	width:500px;
+}
+
+.EditFieldControls
+{
+	vertical-align:top;
+	margin-left:2px;
+	width:80%;
+	text-align:left;
+}
+
+.EditFieldControls table
+{
+    width:100%;
+}
+
+
+.EditFieldControls input[type="radio"], .EditFieldControls input[type="checkbox"], .EditFieldControls div input[type="radio"], .EditFieldControls div input[type="checkbox"]
+{
+    text-align:left;
+    vertical-align:top;
+}
+
+.EditFieldControls input[type="text"], .EditFieldControls div input[type="text"]
+{
+    width:90%;	
+    text-align:left;
+    vertical-align:top;
+    border: 1px solid #0861ad;
+}
+
+.EditFieldControls textarea,  .EditFieldControls div textarea
+{
+    text-align:left;
+	width:99%;	
+	border: 1px solid #0861ad;
+}
+
+.EditFieldContols select,  .EditFieldControls div select
+{
+    border: 1px solid #0861ad;
+    text-align:left;
+    width:200px;	
+}
+
+
+/**************************************************************/
+/* Toolbars */
+/**************************************************************/
+
+
+.WizardToolbar
+{
+	margin-bottom:0px;	
+	vertical-align:middle;
+	padding-right: 40px;
+	font-size:12pt;
+}
+
+.Toolbar
+{
+	background:url(images/lhn-subheading-bg.gif);
+	background-repeat:repeat;
+	border:solid 1px gray;
+	clear:both;
+	line-height: 16px;
+	float:left;
+	width:99.8%;
+	vertical-align:middle;
+	padding-top:3px;
+	padding-bottom:3px;
+	
+}
+
+.Toolbar A
+{
+}
+
+.ToolbarButtonSeparator
+{
+}
+
+.ToolbarButtonSave, .ToolbarButtonNew, .ToolbarButtonEdit, 
+.ToolbarButtonDelete, .ToolbarButtonCancel, .ToolbarButtonNext,
+ .ToolbarButtonPrevious, .ToolbarButtonClearForm, .ToolbarButtonFirst ,
+  .ToolbarButtonLast , .ToolbarButtonRepeat, .ToolbarButtonSkip,
+   .ToolbarButtonUpload, .ToolbarButton, .ToolbarButtonReset,
+   .ToolbarButtonActivate, .ToolbarButtonAssign, .ToolbarButtonInactivate, .ToolbarButtonExport
+{
+	padding-left:20px;
+	margin-left:2px;
+	padding-right:3px;
+	font-weight:bold;
+	vertical-align:middle;
+	white-space: nowrap;
+	display:inline;
+	clear:both;
+
+}
+
+.ToolbarButtonAssign
+{
+  background :url(images/import2.gif) no-repeat left;
+}
+
+.ToolbarButtonExport
+{
+	background:url(images/ICXLS.GIF) no-repeat left;
+}
+
+.ToolbarButtonInactivate
+{
+	background:url(images/icons/16x16/navigate_cross.png) no-repeat left;
+}
+
+.ToolbarButtonActivate
+{
+	background:url(images/icons/16x16/first_aid.png) no-repeat left;
+}
+
+.ToolbarButtonReset
+{
+	background:url(images/icons/16x16/recycle.png) no-repeat left;
+}
+.ToolbarButtonUpload
+{
+	background:url(images/attach_sm.gif) no-repeat left;
+}
+
+.ToolbarButtonSkip
+{
+	background:url(images/skip.gif) no-repeat left;
+}
+
+.ToolbarButtonSave
+{
+	background:url(images/save.gif) no-repeat left;
+}
+.ToolbarButtonNew
+{
+	background:url(images/new.gif) no-repeat left;
+}
+.ToolbarButtonEdit
+{
+	background:url(images/edit.gif) no-repeat left;
+}
+.ToolbarButtonDelete
+{
+	background:url(images/delete.gif) no-repeat left;
+}
+.ToolbarButtonCancel
+{
+	background:url(images/16folderup.gif) no-repeat left;
+}
+.ToolbarButtonNext
+{
+	background:url(images/wz_next.gif) no-repeat left;
+}
+.ToolbarButtonPrevious
+{
+	background:url(images/wz_previous.gif) no-repeat left;
+}
+.ToolbarButtonClearForm
+{
+	background:url(images/clearform.gif) no-repeat left;
+}
+.ToolbarButtonFirst
+{
+	background:url(images/wz_first.gif) no-repeat left;
+}
+.ToolbarButtonLast
+{
+	background:url(images/wz_last.gif) no-repeat left;
+}
+.ToolbarButtonRepeat
+{
+	background:url(images/save.gif) no-repeat left;
+}
+.ToolbarButtonNew-bottom
+{
+	margin-left:5px;
+	padding-left:10px;
+	background:url(images/rect.gif) no-repeat left center;
+		
+}
+
+/**************************************************************/
+/* Popup */
+/**************************************************************/
+.item-details
+{
+	border:solid 1px;
+	border-color:Orange;
+	background-color: #FFFFCC;
+	width: 300px;
+	height: 100%;
+}
+.item-details-document
+{
+	border:solid 1px;
+	border-color:Orange;
+	background-color: #FFFFCC;
+	width: 550px;
+	height: 100%;
+}
+.progress
+{
+
+}
+/**************************************************************/
+/* Calendar */
+/**************************************************************/
+
+.PopupCalendarContainer
+{
+	background-color:White;
+	visibility:hidden;
+}
+
+.PopupCalendarTextBox
+{
+	 border: solid 1px blue;
+}
+
+.PopupCalendar
+{
+	background-color:White;
+	border-color:#999999;
+	font-family:Verdana;
+	font-size:8pt;
+	color:black;
+	width:160px;
+	
+}
+
+.Calendar-SelectedDayStyle
+{
+	background-color:#666666;
+	font-weight:bold;
+	color:White;
+}            
+.Calendar-TodayDayStyle
+{
+	background-color:#CCCCCC;
+	color:Black;
+}            
+.Calendar-SelectorStyle
+{
+	background-color:#CCCCCC;
+}            
+.Calendar-WeekendDayStyle
+{
+	background-color:#FFFFCC;
+}            
+.Calendar-OtherMonthDayStyle
+{
+	color:#808080;
+}            
+.Calendar-NextPrevStyle
+{
+	vertical-align:bottom;
+}            
+.Calendar-DayHeaderStyle
+{
+	background-color:#CCCCCC;
+	font-weight:bold;
+	font-size:7pt;
+}            
+.Calendar-TitleStyle
+{
+	background-color:#999999;
+	font-size:7pt;
+	border-color:Black;
+	font-weight:bold;
+}            
+
+
+/**************************************************************/
+/* Auto Complete Textbox */
+/**************************************************************/
+.ListItem, .ListItemHover
+{
+}
+
+.ListItem
+{
+  color: Blue;
+}
+
+.ListItemHover
+{
+  color: White;
+  background-color: Blue;
+}
+
+/**************************************************************/
+/* Item Picker */
+/**************************************************************/
+.xCCB-ItemPickerSelectedItems
+{
+	background-color:white; padding:3;    
+}
+.xCCB-error-ItemPickerLabel {
+  
+	COLOR: #ff0000; 
+	FONT-FAMILY: verdana, sans-serif;
+	padding-left:15px;
+}
+.xCCB-ItemPicker div
+{
+	font-family:verdana;
+	font-weight:normal;
+}
+
+/******************
+Modal Popup
+*****************/
+
+.modal-popup-background {
+	background-color:#efefef;
+	filter:alpha(opacity=60);
+	opacity:0.6;
+}
+
+.modal-popup {
+	border:solid 1px black;
+	width:0px;
+	height:0px;
+	padding:5px;
+	background-color:white;
+  text-align: center;
+  margin-left: auto;
+  margin-right:auto; 
+}
+
+.modal-popup-blank {
+	border:0px;
+	width:0px;
+	height:0px;
+	
+}
+/**************************************************************/
+/* Progress Bar */
+/**************************************************************/
+.ProgressBarBackground
+{
+	background-color: #c0c0c0; 
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}
+
+.ProgressBar
+{
+	background-color: #ffffdd;
+	border-width: 3px;
+	border-style: solid;
+	background-color: #c0c0c0;
+	padding: 3px;
+	width: 205px;
+}
+
+/******************************************
+* Recurrence Control
+*********************************************/
+.recurrenceTableText{
+	font-family:verdana;
+	font-weight:normal;
+	text-align:left;
+	color:Black;
+	vertical-align:top;
+}
+.recurrenceTableLabelText{
+	font-family:verdana;
+	font-weight:normal;
+	text-align:left;
+	color:Black;
+	vertical-align:middle;
+}
+.recurrencePanelText{
+	font-family:verdana;
+	font-weight:normal;
+	text-align:left;
+	color:Blue;
+	vertical-align:top;
+}
+.recurrenceTableRow {
+	padding: 5px 5px 5px 5px;
+}
+
+/*************************
+*** Reorder List ***
+*************************/
+
+.dragHandle {
+	width:10px;
+	height:15px;
+	background-color:Blue;
+	background-image:url(images/bg-menu-main.png);
+	cursor:move;
+	border:outset thin white;
+}
+
+.reorder-list .callbackStyle {
+	border:thin blue inset;
+
+}
+
+.reorder-list UL
+{
+    margin:0px;  
+    padding:0px;
+}
+
+.reorder-list li
+{
+    margin:0px;  
+	padding:0px;
+    list-style-image:none;
+    list-style-type:none;
+}
+
+.callbackStyle
+{
+	cursor : progress;
+}
+
+.reorder-list .callbackStyle td
+{
+	background-color:#5377A9;
+}
+
+.reorderCue {
+	border:dashed thin black;
+	
+	height:15px;
+	padding:0px;
+	margin:0px;
+	
+}
+
+.reorder-list-container
+{
+	border: solid 1px lightgrey;	
+	padding:0px 0px 0px 0px;
+	overflow-x:scroll;
+	
+}
+.reorder-list table
+{
+	padding:0px;
+	margin:0px;
+}
+
+.reorder-list tr
+{
+	
+}
+
+.reorder-list td
+{
+	height:15px;
+	background-color:whitesmoke;
+	
+}
+
+/*** MoveForum Hierarchy Grid Display settings *****/
+.ForumsTreeGrid
+{
+    text-indent: 0px;
+    text-align:left; 
+    width:115px;
+    font-family:Tahoma;    
+}
+
+.ForumsTreeGrid A:link
+{        
+}
+
+.ForumsTreeGrid A:Hover
+{
+    text-decoration: none;
+    color:Navy;
+    background-color:AliceBlue;
+}
+
+.ForumsTreeGrid A:visited
+{
+    text-decoration: none;
+}
+.ForumsTreeGrid_Selected
+{
+    /* ForeColor="#003366" BackColor=AliceBlue */
+    background-color:AliceBlue;
+    text-decoration: none;
+}
+
+/***************************************
+*****  
+*****  Meeting Events
+*****  
+****************************************/
+.meeting-navigator
+{
+	background-color:whitesmoke;
+	font-family: verdana;
+	height:400px;
+	border: solid 1px #DEDFDE;
+}
+
+.ms-MWSSelectedInstance{
+color:#000000;
+text-decoration:none;
+}
+.ms-MWSInstantiated a:link,.ms-MWSInstantiated a:visited
+{
+color:#003399;
+padding-right:10px;
+margin-right:20px;
+background-image: url(images/dot.gif);
+background-repeat:no-repeat;
+background-position:right center;
+text-align:right;
+}
+.ms-MWSInstantiated a:hover
+{
+color:#8ebbf5;
+text-decoration:underline;
+}
+
+.ms-MWSUninstantiated a:link,.ms-MWSUninstantiated a:visited
+{
+padding-right:10px;
+margin-right:20px;
+color:#003399;
+text-decoration:none;
+text-align:right;
+}
+.ms-MWSUninstantiated a:hover{
+color:#8ebbf5;
+
+text-decoration:underline;
+}
+
+.ms-unselectedtitle{
+background-color:transparent;
+margin:0px;
+padding:0px;
+width:100%;
+}
+
+
+.popupHover
+{
+    background-color: #F7CF94;
+}
+.popupTable
+{
+    display: none;
+    border: 1px solid #De9E5a;
+    width:370px !important;
+}
+.popupTable TD
+{
+    background-color: #FFF7CE;
+    padding-left: 5px;
+}
+
+.popupTable2
+{    
+    border: 1px solid #De9E5a;
+    /*width:370px !important;*/
+    background-color: #FFF7CE;
+    width:100%;
+    font-size:10px;
+    font-family:verdana, sans-serif;
+    
+}
+.popupTable3
+{    
+    padding-left:3px
+}
+.popupTable2 TD
+{
+    background-color: #FFF7CE;
+    
+}
+
+.pop-tb
+{
+	font-size:12px;
+    padding-left: 3px;
+    border-bottom: 1px solid #De9E5a;
+}
+
+.popupPanel
+{
+    width: 200px;
+    background-color: #FFF7CE;
+    border: 1px solid #De9E5a;
+    padding-left: 10px;
+    visibility: hidden;
+    white-space:nowrap;
+}
+
+.title-link
+{
+font-weight:normal;
+	font-family:verdana, sans-serif;	
+}
+
+
+
+/* Special Drop Down*/
+
+.trigger{
+	border:1px solid #ccc;
+	font-size:14px;
+	color:Black;
+	width:15em;
+	padding-right:1em;
+	background:url(images/down.gif) top right no-repeat #fff;
+	display:block;
+}
+
+a.trigger:link
+{
+	color:Black;
+	font-size:14px;
+}
+a.activeDropdownLink:link
+{
+	color:Black;
+	font-size:14px;
+}
+.activetrigger{
+	border:1px solid #ccc;
+	color:Black;
+	width:15em;
+	padding-right:1em;
+	display:block;
+	background:#ccc;
+	font-size:14px;
+}
+/* style of the UL */
+.dropcontainer ul{
+	background:#fff;
+	border:1px solid #999;
+	border-bottom:none;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+	width:753px;
+	position:absolute;
+	font-size:14px;
+	color:Black;
+}
+.dropdownhidden{
+	top:0;
+	left:-999em;
+	font-size:14px;
+	color:Black;
+}
+.dropdownvisible{
+	top:0px;
+	left:0;
+	font-size:14px;
+	color:Black;
+}
+ 
+ul.dropdownvisibletop{
+	top:-215px;
+	left:0;
+	font-size:14px;
+	color:Black;
+}
+.dropcontainer ul a{
+	padding:0 .5em;
+	display:block;
+	width:740px;
+	text-decoration:none;
+	font-size:14px;
+	border-bottom:1px solid #999;
+	color:Black;
+}
+.dropcontainer ul a:hover{
+	background:#ccc;
+}
+ul.dropdownvisible,ul.dropdownvisibletop{
+	height: 200px; 
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.dropcontainer{
+	position:relative;	
+}
+
+.MetadataAnswerFont
+{
+  color:#61300D;
+  font-size:12px;
+  }
+
+a.disabled {
+  color: gray !important;
+}
+table.ContentTypeWorkflowAssignmentTable  td {
+    padding-bottom: 1em;
+}
+.invisible {
+  display:none
+}
+.noPaddingPopup .dx-popup-content {  
+            padding: 0;  
+}
+.DevExtremeToolBarButton {
+  padding-left: 5px !important;
+  padding-right: 5px !important;
+}
