@@ -2,8 +2,10 @@
 git init
 # Connecting to remote repository
 git remote add origin git@github.com:jodon7/DCS_Simplify.git
-
-
+# Testing remote origin
+git remote -v
+# Changing master branch name to main
+git branch -m master main
 #Pushing everything to remote repository
 git add --all
 git commit -m "new changes"
